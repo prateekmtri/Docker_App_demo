@@ -1,14 +1,22 @@
 "use client";
+
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("Loading...");
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000")
+    fetch("http://backend-container:5000")
       .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch((err) => console.error(err));
+      .then((data) => {
+        console.log(data);
+        setMessage(data.message);
+      })
+      .catch((err) => {
+        console.error(err);
+        setError("Failed to connect backend");
+      });
   }, []);
 
   return (
@@ -16,6 +24,7 @@ export default function Home() {
       <h1>Next.js Frontend 🚀</h1>
       <h2>Message from Backend:</h2>
       <p>{message}</p>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 }
