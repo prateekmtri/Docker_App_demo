@@ -3,7 +3,7 @@ import React from 'react';
 // This function runs on the SERVER (inside Docker container)
 async function getData() {
   // Container talks to Container using name
-  const res = await fetch('http://backend-container:5000', { cache: 'no-store' });
+  const res = await fetch('https://docker-app-demo.onrender.com', { cache: 'no-store' });
   
   if (!res.ok) {
     throw new Error('Failed to fetch data');
