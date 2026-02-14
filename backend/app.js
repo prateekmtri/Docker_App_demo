@@ -7,7 +7,7 @@ const PORT = 5000;
 app.use(cors()); 
 
 app.get("/", (req, res) => {
-  res.json({ message: "Hello from Express Backend 🚀" });
+  res.json({ message: "Hello from Express Backend 🚀 i am Prateek" });
 });
 
 app.listen(PORT, () => {

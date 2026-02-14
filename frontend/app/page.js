@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div style={{ padding: "40px", fontFamily: "Arial" }}>
-      <h1>Next.js Frontend 🚀</h1>
+      <h1>Next.js Frontend and made by Prateek 🚀</h1>
       <h2>Message from Backend:</h2>
       {error ? (
         <p style={{ color: "red", fontWeight: "bold" }}>❌ {error}</p>
